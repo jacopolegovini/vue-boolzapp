@@ -1,0 +1,61 @@
+/* * General */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-y: hidden;
+    background-image: linear-gradient(#009688, #DCDBD1, #D2DBDC);
+    height: 100vh;
+}
+
+img {
+    width: 100%;
+}
+
+
+/* * Card */
+
+.app-container {
+    width: 100%;
+    height: 100%;
+}
+
+.card-general {
+    width: 90vw;
+    height: 90vh;
+}
+
+
+/* * Contacts */
+.contacts {
+    flex-basis: calc(100% / 3);
+    height: 100%;
+}
+
+.header-contacts, .header-messages {
+    background-color: #EAEAEA;
+    height: 8%;
+}
+
+.main-contacts {
+    height: 92%;
+}
+
+
+/* * Messages */
+.messages {
+    flex-grow: 1;
+    height: 100%;
+}
+
+.main-messages {
+    background-image: url(img/mine.png);
+    height: 84%;
+}
+
+.footer-messages {
+    height: 8%;
+}
