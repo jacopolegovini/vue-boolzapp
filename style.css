@@ -54,9 +54,51 @@ img {
     color: gray;
 }
 
-/* Main */
+/** Main */
 .main-contacts {
     height: 92%;
+}
+
+/* No notification */
+.no-notification {
+    flex-basis: 10%;
+    background-color: #8EDAFC;
+}
+
+.icon-no-notification {
+    border-radius: 50%;
+    background-color: white;
+    padding: 10px;
+}
+
+.icon-no-notification .fa-bell-slash {
+    color: #8EDAFC;
+}
+
+.content-no-notification section:nth-child(2) {
+    
+}
+
+/* Search bar */
+.search-bar {
+    flex-basis: 6%;
+    border: 10px solid #FAFAFA;
+    background-color: white;
+    color: gray;
+}
+
+.search-icon {
+    flex-basis: 5%;
+    padding: 0 20px;
+}
+
+.content-search-bar {
+    flex-basis: 95%;
+}
+
+/* Chat main contacts */
+.chat-main-contacts {
+    flex-basis: 84%;
 }
 
 
