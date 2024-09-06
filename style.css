@@ -9,6 +9,13 @@ body {
     overflow-y: hidden;
     background-image: linear-gradient(#009688, #DCDBD1, #D2DBDC);
     height: 100vh;
+    font-family: "Lato", sans-serif;
+}
+
+.lato-regular {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 img {
@@ -127,7 +134,7 @@ p {
 
 .time-main-contacts, .content-main-contacts p {
     color: lightgray;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
 }
 
 .content-main-contacts section {
@@ -140,11 +147,27 @@ p {
     height: 100%;
 }
 
+/* * Header */
+.text-header-messages section {
+    font-weight: 600;
+}
+
+.text-header-messages p {
+    opacity: 0.5;
+}
+
+.icons-header-messages .fa-solid {
+    opacity: 0.5;
+    font-size: 1.2rem;
+}
+
+/* * Main */
 .main-messages {
     background-image: url(img/mine.png);
     height: 84%;
 }
 
+/* * Footer */
 .footer-messages {
     height: 8%;
     background-color: #E5DDD5;
