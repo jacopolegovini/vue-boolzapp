@@ -35,11 +35,26 @@ img {
     height: 100%;
 }
 
+/* Header */
 .header-contacts, .header-messages {
     background-color: #EAEAEA;
     height: 8%;
 }
 
+.header-contacts img, .header-messages img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.header-contacts p {
+    margin: 0;
+}
+
+.icons-header-contacts .fa-solid {
+    color: gray;
+}
+
+/* Main */
 .main-contacts {
     height: 92%;
 }
@@ -58,4 +73,5 @@ img {
 
 .footer-messages {
     height: 8%;
+    background-color: #E5DDD5;
 }
