@@ -15,6 +15,14 @@ img {
     width: 100%;
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
 
 /* * Card */
 
@@ -75,8 +83,14 @@ img {
     color: #8EDAFC;
 }
 
+.content-no-notification section:nth-child(1) {
+    font-weight: 600;
+}
+
 .content-no-notification section:nth-child(2) {
-    
+    opacity: 0.5;
+    text-decoration: underline;
+    font-weight: 500;
 }
 
 /* Search bar */
@@ -99,8 +113,26 @@ img {
 /* Chat main contacts */
 .chat-main-contacts {
     flex-basis: 84%;
+    background-color: white;
 }
 
+.chat-main-contacts li {
+    border-bottom: 1px solid lightgray;
+}
+
+.chat-main-contacts img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.time-main-contacts, .content-main-contacts p {
+    color: lightgray;
+    font-size: 0.7rem;
+}
+
+.content-main-contacts section {
+    font-weight: 600;
+}
 
 /* * Messages */
 .messages {
