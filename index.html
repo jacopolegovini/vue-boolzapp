@@ -60,7 +60,7 @@
                     </div>
                     <div class="chat-main-contacts">
                         <ul>
-                            <li class="d-flex justify-content-between py-3" v-for="(contact, index) in contacts">
+                            <li class="d-flex justify-content-between py-3" v-for="(contact, index) in contacts" @click="setIndex(index)">
                                 <div class="d-flex gap-2">
                                     <div class="photo-main-contacts">
                                         <img :src="contact.avatar" :alt="contact.name" class="ms-2">
@@ -97,10 +97,10 @@
                 </header>
                 <main class="main-messages d-flex flex-column gap-3 pt-5 px-5">
                     <div class="message mine-message">
-                        <p>Ricordati di stendere i panni</p>
+                        <p>{{contacts[0].messages[0].message}}</p>
                     </div>
                     <div class="message mine-message">
-                        <p>Se no non si asciugheranno per tempo</p>
+                        <p>{{contacts[getIndex(currentIndex)].messages[1].message}}</p>
                     </div>
                     <div class="message other-message">
                         <p>No problem!</p>
