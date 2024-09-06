@@ -145,6 +145,7 @@ p {
 .messages {
     flex-grow: 1;
     height: 100%;
+    width: 100%;
 }
 
 /* * Header */
@@ -165,6 +166,26 @@ p {
 .main-messages {
     background-image: url(img/mine.png);
     height: 84%;
+    width: 100%;
+}
+
+.message {
+    width: 25%;
+    min-height: 8%;
+    border-radius: 15px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+}
+
+.mine-message {
+    background-color: #D5F9BA;
+    align-self: flex-end;
+}
+
+.other-message {
+    background-color: white;
+    align-self: flex-start;
 }
 
 /* * Footer */
