@@ -193,3 +193,14 @@ p {
     height: 8%;
     background-color: #E5DDD5;
 }
+
+.input-text-footer {
+    flex-basis: 80%;
+}
+
+.icon-footer {
+    opacity: 0.8;
+    font-size: 1.2rem;
+    flex-basis: 10%;
+    text-align: center;
+}
