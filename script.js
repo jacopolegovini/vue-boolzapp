@@ -4,6 +4,11 @@ createApp({
     data() {
       return {
         currentIndex: 0,
+        newMessage: {
+            date: '10/01/2020 15:30:55',
+            message: '',
+            status: 'sent'
+        },
         contacts: [
             {
                 name: 'Michele',
@@ -182,8 +187,16 @@ createApp({
         },
 
         getIndex(currentIndex) {
-            console.log(currentIndex)
             return currentIndex
+        },
+
+        // ! Non funziona, aggiusta
+        getHourFormatted(date) {
+            return DateTime.fromISO(date).toFormat('yyyy LLL dd');
+        },
+
+        addNewMessage(newMessage) {
+            this.contacts[this.currentIndex].messages.push(newMessage)
         }
     }
 }).mount('#app')  

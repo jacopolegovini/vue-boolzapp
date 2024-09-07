@@ -19,6 +19,9 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- Luxon -->
+    <!-- <script defer src="luxon.js"></script> -->
+
 	<!-- JS Vue -->
     <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
@@ -100,7 +103,8 @@
                         <li class="d-flex flex-column gap-3 pt-3 px-5" v-for="(messageElement, index) in contacts[getIndex(currentIndex)].messages">
                             <div class="message mine-message" v-if="messageElement.status === 'sent'">  
                                 <p>{{contacts[getIndex(currentIndex)].messages[index].message}}</p>
-                                <section>15:30</section>  
+                                <!-- TODO Ricorda di mettere la data -->
+                                <section>{{}}</section>  
                             </div>
                             <div class="message other-message" v-else>
                                     <p>{{contacts[getIndex(currentIndex)].messages[index].message}}</p>
@@ -115,7 +119,7 @@
                     </div>
                     <div class="input-text-footer">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Scrivi un messaggio" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control" placeholder="Scrivi un messaggio" aria-label="Recipient's username" aria-describedby="basic-addon2" v-model="newMessage.message" @keyup.enter="addNewMessage(newMessage)">
                           </div>
                     </div>
                     <div class="icon-footer">
