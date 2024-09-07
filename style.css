@@ -178,6 +178,12 @@ p {
     align-items: center;
 }
 
+.message section {
+    align-self: flex-end;
+    font-size: 0.7rem;
+    opacity: 0.7;
+}
+
 .mine-message {
     background-color: #D5F9BA;
     align-self: flex-end;

@@ -67,7 +67,7 @@
                                     </div>
                                     <div class="content-main-contacts">
                                         <section>{{contact.name}}</section>
-                                        <p>Ultimo messaggio Inviato</p>
+                                        <p>Ultimo messaggio inviato</p>
                                     </div>
                                 </div>
                                 <div class="time-main-contacts me-3">
@@ -95,16 +95,30 @@
                         <i class="fa-solid fa-ellipsis-vertical me-3"></i>
                     </div>
                 </header>
-                <main class="main-messages d-flex flex-column gap-3 pt-5 px-5">
-                    <div class="message mine-message">
+                <main class="main-messages">
+                    <!-- TODO Qua è da sistemare la visibilità e dinamicità -->
+                    <!-- <div class="message mine-message">
                         <p>{{contacts[0].messages[0].message}}</p>
+                        <section>15:30</section>
                     </div>
                     <div class="message mine-message">
                         <p>{{contacts[getIndex(currentIndex)].messages[1].message}}</p>
                     </div>
                     <div class="message other-message">
                         <p>No problem!</p>
-                    </div>
+                    </div> -->
+                    <ul>
+                        <li class="d-flex flex-column gap-3 pt-5 px-5" v-for="(messageElement, index) in contacts[getIndex(currentIndex)].messages">
+                            <div class="message mine-message" v-if="messageElement.status === 'sent'">  
+                                <p>{{contacts[getIndex(currentIndex)].messages[index].message}}</p>
+                                <section>15:30</section>  
+                            </div>
+                            <div class="message other-message" v-else>
+                                    <p>{{contacts[getIndex(currentIndex)].messages[index].message}}</p>
+                                    <section>15:30</section>
+                            </div>
+                        </li>
+                    </ul>
                 </main>
                 <footer class="footer-messages d-flex justify-content-around align-items-center">
                     <div class="icon-footer">
