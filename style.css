@@ -175,6 +175,7 @@ p {
     border-radius: 15px;
     padding: 10px 15px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
