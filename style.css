@@ -7,7 +7,7 @@
 
 body {
     overflow-y: hidden;
-    background-image: linear-gradient(#009688, #DCDBD1, #D2DBDC);
+    background: linear-gradient(180deg, #009688 25%, #DBDBD2 25%);
     height: 100vh;
     font-family: "Lato", sans-serif;
 }

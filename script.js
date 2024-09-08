@@ -4,7 +4,7 @@ createApp({
     data() {
       return {
         currentIndex: 0,
-        newMessage: {
+        newMessageCompleted: {
             date: '10/01/2020 15:30:55',
             message: '',
             status: 'sent'
@@ -196,9 +196,19 @@ createApp({
         // },
 
         // TODO Qui funziona ma ci sono dei problemi, risolvi
-        addNewMessage(newMessage) {
-            this.contacts[this.currentIndex].messages.push(newMessage);
-            newMessage = '';
+        // addNewMessage(newMessage) {
+        //     this.contacts[this.currentIndex].messages.push(newMessage);
+        //     newMessage = '';
+        // }
+        addNewMessage(content) {
+            const newObjectInput = {
+                date: '10/01/2020 15:50:00',
+                message: content,
+                status: 'sent'
+            }
+            this.contacts[this.currentIndex].messages.push(newObjectInput)
+            this.newMessageInput = '';
+
         }
     }
 }).mount('#app')  
