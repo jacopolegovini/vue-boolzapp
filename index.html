@@ -85,10 +85,10 @@
                 <header class="header-messages d-flex justify-content-between align-items-center">
                     <div class="content-header-messages d-flex gap-1">
                         <div class="photo-header-messages">
-                            <img src="img/avatar_1.png" alt="img 1" class="ms-2">
+                            <img :src="contacts[currentIndex].avatar" :alt="contacts[currentIndex].name" class="ms-2">
                         </div>
                         <div class="text-header-messages">
-                            <section>Michele</section>
+                            <section>{{contacts[currentIndex].name}}</section>
                             <p>Ultimo accesso oggi alle 12:00</p>
                         </div>
                     </div>

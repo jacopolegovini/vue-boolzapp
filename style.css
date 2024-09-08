@@ -121,6 +121,7 @@ p {
 .chat-main-contacts {
     flex-basis: 84%;
     background-color: white;
+    overflow-y: scroll;
 }
 
 .chat-main-contacts li {

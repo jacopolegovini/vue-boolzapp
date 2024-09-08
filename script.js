@@ -191,12 +191,14 @@ createApp({
         },
 
         // ! Non funziona, aggiusta
-        getHourFormatted(date) {
-            return DateTime.fromISO(date).toFormat('yyyy LLL dd');
-        },
+        // getHourFormatted(date) {
+        //     return DateTime.fromISO(date).toFormat('yyyy LLL dd');
+        // },
 
+        // TODO Qui funziona ma ci sono dei problemi, risolvi
         addNewMessage(newMessage) {
-            this.contacts[this.currentIndex].messages.push(newMessage)
+            this.contacts[this.currentIndex].messages.push(newMessage);
+            newMessage = '';
         }
     }
 }).mount('#app')  
