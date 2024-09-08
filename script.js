@@ -195,20 +195,29 @@ createApp({
         //     return DateTime.fromISO(date).toFormat('yyyy LLL dd');
         // },
 
-        // TODO Qui funziona ma ci sono dei problemi, risolvi
-        // addNewMessage(newMessage) {
-        //     this.contacts[this.currentIndex].messages.push(newMessage);
-        //     newMessage = '';
-        // }
         addNewMessage(content) {
+            // Dichiaro le variabili
             const newObjectInput = {
                 date: '10/01/2020 15:50:00',
                 message: content,
                 status: 'sent'
             }
+            const newAnswer = {
+                date: '10/01/2020 15:50:00',
+                message: 'Ok!',
+                status: 'received'
+            }
+
             this.contacts[this.currentIndex].messages.push(newObjectInput)
             this.newMessageInput = '';
 
+            // Funzione per la risposta
+            const incrementTime = () => {
+                this.contacts[this.currentIndex].messages.push(newAnswer)
+            }
+
+            // Dopo un secondo parte
+            const timer = setTimeout(incrementTime, 1000)
         }
     }
 }).mount('#app')  
