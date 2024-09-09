@@ -168,8 +168,6 @@ createApp({
                 ],
             }
         ]
-        
-      
         }
     },
 
@@ -186,16 +184,20 @@ createApp({
             return currentIndex;
         },
 
-        // ! Non funziona, aggiusta
-        getHourFormatted() {
-            console.log(dateTime.now());
-            // return DateTime.fromISO(date).toFormat('yyyy LLL dd');
+        getHourFormatted(messageElement) {
+            // Converto la data in ISO
+            let event = new Date(messageElement.date);
+            event = event.toISOString();
+
+            // La ritorno nella modalità che mi serve
+            const dateElement = dateTime.fromISO(event).toFormat('T');
+            return dateElement;
         },
 
         addNewMessage(content) {
             // Dichiaro le variabili
             const newObjectInput = {
-                date: '10/01/2020 15:50:00',
+                date: dateTime.now(),
                 message: content,
                 status: 'sent'
             }
