@@ -220,14 +220,24 @@ createApp({
         },
 
         // TODO Da sistemare il metodo search
-        // searchName(){
-        //     let contactsNumber = this.contacts.length
-        //     for (let i = 0; i < contactsNumber; i++) {
-        //         let contact = this.contacts[i]
-        //         for (let j = 0; j < contact.message.length; j++) {
-        //             console.log('test')
-        //         }
-        //     }
-        // }
+        searchName(searchedName) {
+            // Crea un array temporaneo per memorizzare i risultati della ricerca
+            let matchingContacts = [];
+        
+            // Usa forEach per iterare sui contatti senza modificare l'array
+            this.contacts.forEach(contact => {
+                if (contact.name.includes(searchedName)) {
+                    matchingContacts.push(contact);  // Aggiungi il contatto che corrisponde alla ricerca
+                } else {
+                    console.log('nope');
+                }
+            });
+        
+            // Stampa i risultati trovati
+            console.log(matchingContacts);
+        
+            // Se desideri aggiornare i contatti attivi con quelli che corrispondono alla ricerca
+            this.contacts = matchingContacts;
+        }
     }
 }).mount('#app')  
