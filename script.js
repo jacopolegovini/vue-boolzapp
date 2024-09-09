@@ -1,4 +1,5 @@
 const {createApp} = Vue;
+const dateTime = luxon.DateTime;
 
 createApp({
     data() {
@@ -182,12 +183,12 @@ createApp({
         },
 
         getIndex(currentIndex) {
-            return currentIndex
+            return currentIndex;
         },
 
         // ! Non funziona, aggiusta
         getHourFormatted() {
-            console.log(DateTime.fromISO("2017-05-15"))
+            console.log(dateTime.now());
             // return DateTime.fromISO(date).toFormat('yyyy LLL dd');
         },
 
