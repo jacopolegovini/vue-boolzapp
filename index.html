@@ -58,7 +58,6 @@
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
                         <div class="content-search-bar">
-                            <!-- TODO da aggiustare il search -->
                             <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="searchedName" @keyup.enter="searchName(searchedName)">
                         </div>
                     </div>
@@ -116,10 +115,11 @@
                                     <p>{{contacts[getIndex(currentIndex)].messages[index].message}}</p>
                                     <section>{{getHourFormatted(messageElement)}}</section>
                                     <div class="hover-menu">
-                                        <i class="fa-solid fa-chevron-down" @click=""></i>
+                                        <i class="fa-solid fa-chevron-down" @click="getExtraMenu()"></i>
                                     </div>
-                                    <div class="accordion-message">
+                                    <div class="accordion-message px-2" v-if="accordionFlag === false">
                                         <p>Message info</p>
+                                        <section class="line"></section>
                                         <p>Delete message</p>
                                     </div>
                             </div>

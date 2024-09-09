@@ -5,6 +5,7 @@ createApp({
     data() {
       return {
         currentIndex: 0,
+        accordionFlag: true,
         contacts: [
             {
                 name: 'Michele',
@@ -172,7 +173,7 @@ createApp({
     },
 
     computed: {
-        
+
     },
 
     methods: {
@@ -219,25 +220,27 @@ createApp({
             const timer = setTimeout(incrementTime, 1000)
         },
 
-        // TODO Da sistemare il metodo search
         searchName(searchedName) {
             // Crea un array temporaneo per memorizzare i risultati della ricerca
             let matchingContacts = [];
-        
+
             // Usa forEach per iterare sui contatti senza modificare l'array
             this.contacts.forEach(contact => {
-                if (contact.name.includes(searchedName)) {
-                    matchingContacts.push(contact);  // Aggiungi il contatto che corrisponde alla ricerca
-                } else {
-                    console.log('nope');
-                }
+                if (contact.name.includes(searchedName)) matchingContacts.push(contact);
             });
-        
+
             // Stampa i risultati trovati
             console.log(matchingContacts);
-        
+
             // Se desideri aggiornare i contatti attivi con quelli che corrispondono alla ricerca
             this.contacts = matchingContacts;
+
+            // TODO E se voglio cancellare quanto scritto e rifare una ricerca?
+            // if (matchingContacts.length === 0) this.contacts = this.supportArray;
+        },
+
+        getExtraMenu() {
+            return this.accordionFlag = !this.accordionFlag; 
         }
     }
-}).mount('#app')  
+}).mount('#app')
