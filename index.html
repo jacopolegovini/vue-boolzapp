@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- Luxon -->
-    <!-- <script defer src="luxon.js"></script> -->
+    <script defer src="https://cdn.jsdelivr.net/npm/luxon@3.5.0/build/global/luxon.min.js"></script>
 
 	<!-- JS Vue -->
     <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -58,19 +58,22 @@
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
                         <div class="content-search-bar">
-                            <section>Cerca o inizia una nuova chat</section>
+                            <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="searchedName" @keyup.enter="searchName(searchedName, contact)">
                         </div>
                     </div>
                     <div class="chat-main-contacts">
                         <ul>
                             <li class="d-flex justify-content-between py-3" v-for="(contact, index) in contacts" @click="setIndex(index)">
-                                <div class="d-flex gap-2">
-                                    <div class="photo-main-contacts">
-                                        <img :src="contact.avatar" :alt="contact.name" class="ms-2">
-                                    </div>
-                                    <div class="content-main-contacts">
-                                        <section>{{contact.name}}</section>
-                                        <p>Ultimo messaggio inviato</p>
+                                <!-- TODO da aggiustare il search -->
+                                <div v-if="contact">
+                                    <div class="d-flex gap-2">
+                                        <div class="photo-main-contacts">
+                                            <img :src="contact.avatar" :alt="contact.name" class="ms-2">
+                                        </div>
+                                        <div class="content-main-contacts">
+                                            <section>{{contact.name}}</section>
+                                            <p>Ultimo messaggio inviato</p>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="time-main-contacts me-3">
@@ -104,11 +107,21 @@
                             <div class="message mine-message" v-if="messageElement.status === 'sent'">  
                                 <p>{{contacts[getIndex(currentIndex)].messages[index].message}}</p>
                                 <!-- TODO Ricorda di mettere la data -->
-                                <section>{{}}</section>  
+                                <section>{{getHourFormatted()}}</section>  
+                                <div class="hover-menu">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
                             </div>
                             <div class="message other-message" v-else>
                                     <p>{{contacts[getIndex(currentIndex)].messages[index].message}}</p>
                                     <section>15:30</section>
+                                    <div class="hover-menu">
+                                        <i class="fa-solid fa-chevron-down" @click=""></i>
+                                    </div>
+                                    <div class="accordion-message">
+                                        <p>Message info</p>
+                                        <p>Delete message</p>
+                                    </div>
                             </div>
                         </li>
                     </ul>

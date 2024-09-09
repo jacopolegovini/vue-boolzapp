@@ -4,11 +4,6 @@ createApp({
     data() {
       return {
         currentIndex: 0,
-        newMessageCompleted: {
-            date: '10/01/2020 15:30:55',
-            message: '',
-            status: 'sent'
-        },
         contacts: [
             {
                 name: 'Michele',
@@ -191,9 +186,10 @@ createApp({
         },
 
         // ! Non funziona, aggiusta
-        // getHourFormatted(date) {
-        //     return DateTime.fromISO(date).toFormat('yyyy LLL dd');
-        // },
+        getHourFormatted() {
+            console.log(DateTime.fromISO("2017-05-15"))
+            // return DateTime.fromISO(date).toFormat('yyyy LLL dd');
+        },
 
         addNewMessage(content) {
             // Dichiaro le variabili
@@ -218,6 +214,13 @@ createApp({
 
             // Dopo un secondo parte
             const timer = setTimeout(incrementTime, 1000)
-        }
+        },
+
+        // TODO Da sistemare il metodo search
+        // searchName(searchedNamed, contact){
+        //     let flag = false;
+        //     if (contact.name.includes(searchedNamed)) flag = true
+        //     return flag;
+        // }
     }
 }).mount('#app')  

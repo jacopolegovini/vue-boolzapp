@@ -178,6 +178,22 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+}
+
+.message:hover section {
+    opacity: 0.0;
+}
+
+.message:hover .hover-menu {
+    display: block;
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+}
+
+.hover-menu {
+    display: none;
 }
 
 .message section {
@@ -194,6 +210,10 @@ p {
 .other-message {
     background-color: white;
     align-self: flex-start;
+}
+
+.accordion-message {
+    display: none;
 }
 
 /* * Footer */
