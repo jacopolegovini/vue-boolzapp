@@ -202,7 +202,7 @@ createApp({
                 status: 'sent'
             }
             const newAnswer = {
-                date: '10/01/2020 15:50:00',
+                date: dateTime.now(),
                 message: 'Ok!',
                 status: 'received'
             }
@@ -220,10 +220,14 @@ createApp({
         },
 
         // TODO Da sistemare il metodo search
-        // searchName(searchedNamed, contact){
-        //     let flag = false;
-        //     if (contact.name.includes(searchedNamed)) flag = true
-        //     return flag;
+        // searchName(){
+        //     let contactsNumber = this.contacts.length
+        //     for (let i = 0; i < contactsNumber; i++) {
+        //         let contact = this.contacts[i]
+        //         for (let j = 0; j < contact.message.length; j++) {
+        //             console.log('test')
+        //         }
+        //     }
         // }
     }
 }).mount('#app')  

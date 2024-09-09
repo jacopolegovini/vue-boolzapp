@@ -56,15 +56,16 @@
                     <div class="search-bar d-flex align-items-center">
                         <div class="search-icon">
                             <i class="fa-solid fa-magnifying-glass"></i>
+                            <!-- {{searchName()}} -->
                         </div>
                         <div class="content-search-bar">
+                            <!-- TODO da aggiustare il search -->
                             <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="searchedName" @keyup.enter="searchName(searchedName, contact)">
                         </div>
                     </div>
                     <div class="chat-main-contacts">
                         <ul>
                             <li class="d-flex justify-content-between py-3" v-for="(contact, index) in contacts" @click="setIndex(index)">
-                                <!-- TODO da aggiustare il search -->
                                 <div v-if="contact">
                                     <div class="d-flex gap-2">
                                         <div class="photo-main-contacts">
