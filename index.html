@@ -108,19 +108,25 @@
                                 <!-- ! Come mai per alcune ora risulta essere invalido? -->
                                 <section>{{getHourFormatted(messageElement)}}</section>  
                                 <div class="hover-menu">
-                                    <i class="fa-solid fa-chevron-down"></i>
+                                    <i class="fa-solid fa-chevron-down" @click="getMineExtraMenu()"></i>
+                                </div>
+                                <!-- ! Da sistemare l'accordion sul click -->
+                                <div class="accordion-message px-2" v-if="mineAccordionFlag === false">
+                                    <p>Message info</p>
+                                    <section class="line"></section>
+                                    <p @click="deleteMessage(getIndex(currentIndex), index)">Delete message</p>
                                 </div>
                             </div>
                             <div class="message other-message" v-else>
                                     <p>{{contacts[getIndex(currentIndex)].messages[index].message}}</p>
                                     <section>{{getHourFormatted(messageElement)}}</section>
                                     <div class="hover-menu">
-                                        <i class="fa-solid fa-chevron-down" @click="getExtraMenu()"></i>
+                                        <i class="fa-solid fa-chevron-down" @click="getOtherExtraMenu()"></i>
                                     </div>
-                                    <div class="accordion-message px-2" v-if="accordionFlag === false">
+                                    <div class="accordion-message px-2" v-if="otherAccordionFlag === false">
                                         <p>Message info</p>
                                         <section class="line"></section>
-                                        <p>Delete message</p>
+                                        <p @click="deleteMessage(getIndex(currentIndex), index)">Delete message</p>
                                     </div>
                             </div>
                         </li>

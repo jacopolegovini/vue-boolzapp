@@ -5,7 +5,8 @@ createApp({
     data() {
       return {
         currentIndex: 0,
-        accordionFlag: true,
+        mineAccordionFlag: true,
+        otherAccordionFlag: true,
         contacts: [
             {
                 name: 'Michele',
@@ -239,8 +240,16 @@ createApp({
             // if (matchingContacts.length === 0) this.contacts = this.supportArray;
         },
 
-        getExtraMenu() {
-            return this.accordionFlag = !this.accordionFlag; 
+        getMineExtraMenu() {
+            return this.mineAccordionFlag = !this.mineAccordionFlag; 
+        },
+
+        getOtherExtraMenu() {
+            return this.otherAccordionFlag = !this.otherAccordionFlag; 
+        },
+
+        deleteMessage(getIndex, index) {
+            this.contacts[getIndex].messages.splice(index, 1);
         }
     }
 }).mount('#app')
