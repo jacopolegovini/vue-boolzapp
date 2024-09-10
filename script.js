@@ -187,12 +187,15 @@ createApp({
         },
 
         getHourFormatted(messageElement) {
-            // Converto la data in ISO
-            let event = new Date(messageElement.date);
-            event = event.toISOString();
+            // Setto la data dal formato che voglio io
+            const event = dateTime.fromFormat(messageElement.date, "dd/MM/yyyy HH:mm:ss");
 
-            // La ritorno nella modalità che mi serve
-            const dateElement = dateTime.fromISO(event).toFormat('T');
+            // La converto in ISO
+            const isoEvent = event.toISO();
+
+            // Ritorno con quello che voglio
+            const dateElement = dateTime.fromISO(isoEvent).toFormat('T');
+            
             return dateElement;
         },
 
